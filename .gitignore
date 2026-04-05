@@ -1,0 +1,82 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode — build products & caches
+build/
+DerivedData/
+*.xcresult
+*.moved-aside
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+# Xcode — user-specific (machine, accounts, schemes, breakpoints) — keep out of git
+xcuserdata/
+*.xcuserstate
+*.xccheckout
+*.xcscmblueprint
+
+# Swift Package Manager
+.build/
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+Packages/
+
+# CocoaPods (if added later)
+Pods/
+*.podspec.lock
+
+# Carthage (if added later)
+Carthage/Build/
+
+# Accio dependency manager (if used)
+Dependencies/
+.accio/
+
+# fastlane (optional; may contain API keys in some setups)
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+fastlane/.env
+fastlane/.env.*
+
+# Environment & secrets — never commit personal or machine-specific data
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.mobileprovision
+*.cer
+AuthKey_*.p8
+google-services.json
+GoogleService-Info.plist
+
+# Archives & local exports
+*.xcarchive
+*.zip
+
+# IDEs & editors (optional local overrides)
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs & temp
+*.log
+tmp/
+temp/
+
+# Ruby / Jekyll (if you run GitHub Pages locally)
+docs/.jekyll-cache/
+docs/_site/
+docs/vendor/
+.bundle/
