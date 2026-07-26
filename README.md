@@ -9,7 +9,12 @@
 - **Timed or indefinite “keep awake”** — Pick a duration or run until you stop it.
 - **Clear session info** — See when a timed session ends, or that it is indefinite.
 - **Menu bar icon** — Choose an icon style that fits your setup.
+- **Keep awake on launch** — Optionally start an indefinite session when Tea opens.
 - **Launch at login** — Optional; uses the system’s login items interface.
+
+## Requirements
+
+macOS 14 or later.
 
 ## Get it
 
