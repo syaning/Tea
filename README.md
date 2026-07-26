@@ -13,7 +13,7 @@
 
 ## Get it
 
-Download from [release page](https://github.com/syaning/slim/releases) or build from source.
+Download from [release page](https://github.com/syaning/Tea/releases) or build from source.
 
 ## Screenshots
 
