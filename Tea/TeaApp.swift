@@ -9,12 +9,21 @@ import SwiftUI
 
 @main
 struct TeaApp: App {
-    @State private var sleepManager = SleepPreventionManager()
+    @State private var sleepManager: SleepPreventionManager
     @State private var launchAtLogin = LaunchAtLoginManager()
     @AppStorage(IconStyle.appStorageKey) private var iconStyleRaw = IconStyle.leaf.rawValue
 
     private var iconStyle: IconStyle {
         IconStyle(rawValue: iconStyleRaw) ?? .leaf
+    }
+
+    init() {
+        let manager = SleepPreventionManager()
+        let defaults = UserDefaults.standard
+        if defaults.bool(forKey: SleepPreventionManager.autoStartEnabledKey) {
+            manager.start(duration: .indefinite)
+        }
+        _sleepManager = State(initialValue: manager)
     }
 
     var body: some Scene {

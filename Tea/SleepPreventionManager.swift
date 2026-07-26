@@ -9,6 +9,8 @@ import Observation
 @MainActor
 @Observable
 final class SleepPreventionManager {
+    static let autoStartEnabledKey = "autoStartOnLaunch"
+
     private var activity: NSObjectProtocol?
     private var endTask: Task<Void, Never>?
 
@@ -17,13 +19,15 @@ final class SleepPreventionManager {
     // When the timed session ends; `nil` for indefinite sessions.
     private(set) var sessionEndsAt: Date?
 
-    enum Duration: CaseIterable {
+    enum Duration: String, CaseIterable, Identifiable {
         case indefinite
         case minutes15
         case minutes30
         case hour1
         case hour2
         case hour4
+
+        var id: String { rawValue }
 
         var title: String {
             switch self {

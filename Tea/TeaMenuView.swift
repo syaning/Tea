@@ -11,6 +11,7 @@ struct TeaMenuView: View {
     @Bindable var launchAtLogin: LaunchAtLoginManager
 
     @AppStorage(IconStyle.appStorageKey) private var iconStyleRaw = IconStyle.leaf.rawValue
+    @AppStorage(SleepPreventionManager.autoStartEnabledKey) private var autoStartOnLaunch = false
 
     var body: some View {
         if sleepManager.isActive {
@@ -32,7 +33,7 @@ struct TeaMenuView: View {
         }
 
         Menu("Keep Awake") {
-            ForEach(SleepPreventionManager.Duration.allCases, id: \.title) { d in
+            ForEach(SleepPreventionManager.Duration.allCases) { d in
                 Button(d.title) {
                     sleepManager.start(duration: d)
                 }
@@ -51,6 +52,8 @@ struct TeaMenuView: View {
             .labelsHidden()
             .pickerStyle(.inline)
         }
+
+        Toggle("Keep Awake on Launch", isOn: $autoStartOnLaunch)
 
         Toggle("Launch at Login", isOn: Binding(
             get: { launchAtLogin.isLaunchAtLoginEnabled },
